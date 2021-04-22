@@ -7,7 +7,7 @@ const myaddToBillBtn = document.querySelector(".addToBillBtn");
 const callTotalOneElement = document.querySelector(".callTotalOne");
 //get reference to the sms
 const smsTotalOneElement = document.querySelector(".smsTotalOne");
-
+//Where overall total should be displayed
 const totalOneElement = document.querySelector(".totalOne");
 
 

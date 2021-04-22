@@ -5,7 +5,6 @@ const billTotalElement = document.querySelector(".billTotal");
 //get a reference to the billString
 const billStringField = document.querySelector(".billString");
 //get a reference to the total element
-
 const billTotalColor = document.querySelector(".total"); 
 //alert(mycalculateBtn);
 
