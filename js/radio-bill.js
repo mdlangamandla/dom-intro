@@ -7,6 +7,12 @@ const totalTwoElem = document.querySelector('.totalTwo');
 //get a reference to the add button
 const radioBillAddBtnElement = document.querySelector('.radioBillAddBtn');
 
+//REFERENCE A TEMPLATE
+const radioUserTemplateElem = document.querySelector('.userTemplate').innerHTML
+
+ //COMPILE A TEMPLATE
+ var userTemplate = Handlebars.compile(radioUserTemplateElem);
+
 //create a variable that will keep track of the total bill
 var call = 0;
 var sms = 0;
@@ -18,7 +24,7 @@ function radioBillTotal(){
     var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
     if (checkedRadioBtn){
     var billItemType = checkedRadioBtn.value
-    // billItemType will be 'call' or 'sms'
+    
     if(billItemType === "call"){
         call += 2.75;
     }
@@ -26,10 +32,10 @@ function radioBillTotal(){
         sms += 0.75;
     }
 
-    callTotalTwoElem.innerHTML = call.toFixed(2);
-    smsTotalTwoElem.innerHTML = sms.toFixed(2);
+    callTotalTwoElem.innerHTML = userTemplate({callTotalTwo:call.toFixed(2)});
+    smsTotalTwoElem.innerHTML = userTemplate({smsTotalTwo:sms.toFixed(2)});
     var totalCost = call + sms;
-    totalTwoElem.innerHTML = totalCost.toFixed(2);
+    totalTwoElem.innerHTML = userTemplate({totalTwo:totalCost.toFixed(2)});
 }
 
 if (totalCost >= 50){
